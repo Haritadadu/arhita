@@ -61,19 +61,26 @@
     border-bottom:1px solid var(--line);
   }
   .logo{
-    font-family:var(--serif);
-    font-size:22px;
-    letter-spacing:.22em;
-    font-weight:600;
-    color:var(--ink);
-    transition:color .4s ease;
+    display:flex;
+    align-items:center;
+  }
+  .logo img{
+    height:40px;
+    width:auto;
+    transition:filter .4s ease, height .4s ease;
+  }
+  header.hero-zone .logo img{
+    filter:brightness(0) invert(1);
+  }
+  header.scrolled .logo img{
+    height:32px;
   }
   nav.links{display:flex;gap:44px;}
   @media(max-width:900px){nav.links{display:none;}}
   .navlink{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);position:relative;padding-bottom:4px;transition:color .4s ease;}
   .navlink::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .35s ease;}
   .navlink:hover::after{width:100%;}
-  header.hero-zone .logo, header.hero-zone .navlink{color:#fff;}
+  header.hero-zone .navlink{color:#fff;}
   .nav-cta{
     border:1px solid currentColor;
     padding:10px 22px;
@@ -236,6 +243,17 @@
   }
   .add-cart:hover{background:var(--gold);}
 
+  /* Best sellers: only 2 items, center them nicely */
+  .bestsellers-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,320px));
+    gap:32px;
+    justify-content:center;
+  }
+  @media(max-width:640px){
+    .bestsellers-grid{grid-template-columns:minmax(0,340px);}
+  }
+
   /* ---------- brand story ---------- */
   .story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
   @media(max-width:860px){.story{grid-template-columns:1fr;gap:40px;}}
@@ -297,7 +315,8 @@
   footer{background:#16140f;color:rgba(255,255,255,.65);padding:70px 0 30px;}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px;}
   @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;}}
-  .foot-logo{font-family:var(--serif);font-size:22px;letter-spacing:.2em;color:#fff;margin-bottom:16px;}
+  .foot-logo{margin-bottom:16px;}
+  .foot-logo img{height:36px;width:auto;filter:brightness(0) invert(1);}
   .foot-grid p{font-size:13px;line-height:1.7;max-width:280px;color:rgba(255,255,255,.5);}
   .foot-col h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px;}
   .foot-col ul{list-style:none;display:grid;gap:11px;}
@@ -308,7 +327,7 @@
 </head>
 <body>
 <header id="siteHeader" class="hero-zone">
-  <div class="logo">ARHITA</div>
+  <a class="logo" href="#" aria-label="ARHITA home"><img src="images/logo.jpeg" alt="ARHITA logo"></a>
   <nav class="links">
     <a class="navlink" href="#collections">Collections</a>
     <a class="navlink" href="#pendantsets">Pendant Sets</a>
@@ -478,45 +497,25 @@
       <h2>Best Sellers</h2>
       <p>The pieces our first circle keeps coming back for.</p>
     </div>
-    <div class="product-grid">
+    <div class="bestsellers-grid">
       <div class="product-card reveal">
-        <button class="wishlist-btn" aria-label="Add Aara Solitaire Pendant to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
-        <div class="jewel-tile"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M18 24l12-14 12 14-12 26z"/></svg></div>
+        <button class="wishlist-btn" aria-label="Add Menaka Pendant Set to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
+        <div class="jewel-tile"><img src="images/pendantset2.jpeg" alt="Menaka Pendant Set in 925 sterling silver"></div>
         <div class="product-info">
-          <div class="cat">Necklace</div>
-          <h4>Aara Solitaire Pendant</h4>
+          <div class="cat">Pendant Set</div>
+          <h4>Menaka Pendant Set</h4>
           <div class="stars">★★★★★</div>
-          <div class="price-row"><span class="price">₹3,450</span><button class="add-cart" type="button">Add to Cart</button></div>
+          <div class="price-row"><span class="price">₹2,499</span><button class="add-cart" type="button">Add to Cart</button></div>
         </div>
       </div>
       <div class="product-card reveal">
-        <button class="wishlist-btn" aria-label="Add Menaka Drop Hoops to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
-        <div class="jewel-tile"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M18 20c0 8 5 12 12 12s12-4 12-12"/></svg></div>
+        <button class="wishlist-btn" aria-label="Add Rambha Pendant Set to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
+        <div class="jewel-tile"><img src="images/pendantset3.jpeg" alt="Rambha Pendant Set in 925 sterling silver"></div>
         <div class="product-info">
-          <div class="cat">Earrings</div>
-          <h4>Menaka Drop Hoops</h4>
+          <div class="cat">Pendant Set</div>
+          <h4>Rambha Pendant Set</h4>
           <div class="stars">★★★★★</div>
-          <div class="price-row"><span class="price">₹2,180</span><button class="add-cart" type="button">Add to Cart</button></div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <button class="wishlist-btn" aria-label="Add Rambha Stacking Band to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
-        <div class="jewel-tile"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="30" cy="30" r="16"/></svg></div>
-        <div class="product-info">
-          <div class="cat">Ring</div>
-          <h4>Rambha Stacking Band</h4>
-          <div class="stars">★★★★★</div>
-          <div class="price-row"><span class="price">₹1,890</span><button class="add-cart" type="button">Add to Cart</button></div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <button class="wishlist-btn" aria-label="Add Sohni Chain Bracelet to wishlist" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-9.5-9C.6 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2 .8-1.3 2.5-2.3 4.5-2 3.5.5 4.9 4 3 8-2.5 4.6-9.5 9-9.5 9z"/></svg></button>
-        <div class="jewel-tile"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M15 30a15 4 0 1 0 30 0a15 4 0 1 0 -30 0"/></svg></div>
-        <div class="product-info">
-          <div class="cat">Bracelet</div>
-          <h4>Sohni Chain Bracelet</h4>
-          <div class="stars">★★★★★</div>
-          <div class="price-row"><span class="price">₹2,650</span><button class="add-cart" type="button">Add to Cart</button></div>
+          <div class="price-row"><span class="price">₹2,499</span><button class="add-cart" type="button">Add to Cart</button></div>
         </div>
       </div>
     </div>
@@ -629,7 +628,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo">ARHITA</div>
+        <div class="foot-logo"><img src="images/logo.jpeg" alt="ARHITA logo"></div>
         <p>Premium 925 sterling silver jewellery, crafted in India for a global standard of quiet luxury.</p>
       </div>
       <div class="foot-col">
