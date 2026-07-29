@@ -61,20 +61,20 @@
     border-bottom:1px solid var(--line);
   }
   .logo{
-    display:flex;
-    align-items:center;
-  }
-  .logo img{
-    height:40px;
-    width:auto;
-    transition:filter .4s ease, height .4s ease;
-  }
-  header.hero-zone .logo img{
-    filter:brightness(0) invert(1);
-  }
-  header.scrolled .logo img{
-    height:32px;
-  }
+  display:flex;
+  align-items:center;
+}
+.logo img{
+  height:40px;
+  width:auto;
+  background:#fff;
+  padding:3px 6px;
+  border-radius:4px;
+  transition:height .4s ease;
+}
+header.scrolled .logo img{
+  height:32px;
+}
   nav.links{display:flex;gap:44px;}
   @media(max-width:900px){nav.links{display:none;}}
   .navlink{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);position:relative;padding-bottom:4px;transition:color .4s ease;}
