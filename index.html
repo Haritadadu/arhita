@@ -60,20 +60,21 @@
     padding:16px 40px;
     border-bottom:1px solid var(--line);
   }
-  .logo{
-  display:flex;
-  align-items:center;
+.logo{
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  background:linear-gradient(120deg, #b8935a 0%, #e8d5a8 30%, #c8a96a 50%, #f0e2c0 70%, #b8935a 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 1px 2px rgba(0,0,0,.08);
+  transition:filter .4s ease;
 }
-.logo img{
-  height:40px;
-  width:auto;
-  background:#fff;
-  padding:3px 6px;
-  border-radius:4px;
-  transition:height .4s ease;
-}
-header.scrolled .logo img{
-  height:32px;
+header.hero-zone .logo{
+  filter:brightness(1.3);
 }
   nav.links{display:flex;gap:44px;}
   @media(max-width:900px){nav.links{display:none;}}
@@ -333,7 +334,7 @@ header.scrolled .logo img{
 </head>
 <body>
 <header id="siteHeader" class="hero-zone">
-  <a class="logo" href="#" aria-label="ARHITA home"><img src="images/logo.jpeg" alt="ARHITA logo"></a>
+ <div class="logo">ARHITA</div>
   <nav class="links">
     <a class="navlink" href="#collections">Collections</a>
     <a class="navlink" href="#pendantsets">Pendant Sets</a>
@@ -634,7 +635,7 @@ header.scrolled .logo img{
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo"><img src="images/logo.jpeg" alt="ARHITA logo"></div>
+        <div class="foot-logo"><img src="images/logo.png" alt="ARHITA logo"></div>
         <p>Premium 925 sterling silver jewellery, crafted in India for a global standard of quiet luxury.</p>
       </div>
       <div class="foot-col">
